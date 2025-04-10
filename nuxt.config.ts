@@ -24,6 +24,20 @@ export default defineNuxtConfig({
       {code: 'fa', name: 'Persian', file: 'fa.json', dir: "rtl"},
       {code: 'ar', name: 'Arabic', file: 'ar.json', dir: 'rtl'}
     ],
-    strategy: 'prefix_except_default'
-  }
+    strategy: 'prefix_except_default',
+    customRoutes: 'config',
+    pages: {
+      projects: {
+        ar: '/مشاريعی',
+        fa: '/پروژه-های-من' ,
+        en: '/projects'
+      },
+      contact: {
+        ar: '/اتصل-بی',
+        fa: '/تماس-بامن',
+        en: '/contact-us'
+      }
+    }
+  },
+  css: ["~/assets/css/main.css"]
 })

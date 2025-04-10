@@ -2,11 +2,11 @@
     <nav :class="[isDark ? 'bg-dark-lighter/80' : 'bg-light-darker/80']" class="fixed w-full backdrop-blur-sm z-50">
       <div class="container mx-auto px-4 py-4">
         <div class="flex items-center justify-between">
-          <NuxtLink to="/" class="text-2xl font-bold text-primary">Fatimah 🌙 </NuxtLink>
+          <NuxtLinkLocale to="/" class="text-2xl font-bold text-primary">Fatimah 🌙 </NuxtLinkLocale>
           <div class="hidden md:flex items-center gap-6">
             <NuxtLinkLocale to="/" class="hover:text-primary transition-colors">{{ $t("Home") }}</NuxtLinkLocale>
             <NuxtLinkLocale to="/projects" class="hover:text-primary transition-colors">{{ $t('Projects') }}</NuxtLinkLocale>
-            <NuxtLinkLocale to="/contact" class="hover:text-primary transition-colors">{{ $t('Contact') }}</NuxtLinkLocale>
+            <NuxtLinkLocale to="/contact-us" class="hover:text-primary transition-colors">{{ $t('Contact') }}</NuxtLinkLocale>
             <button class="relative" @click="isOpenDropdownTranslation = !isOpenDropdownTranslation">
               <LanguageIcon class="w-5" />
               <div v-motion-pop-visible v-if="isOpenDropdownTranslation" class="absolute top-8 shadow-lg w-max rounded-md right-0 bg-white">

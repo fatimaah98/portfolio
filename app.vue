@@ -1,5 +1,5 @@
 <template>
-    <div :class="[isDark ? 'bg-dark text-white' : 'bg-light text-dark']" class="min-h-screen">
+    <div :class="[isDark ? 'bg-dark text-white' : 'bg-light text-dark', `lang-${locale}`]" class="min-h-screen">
         <HeaderBar :is-dark="isDark" @themeController="(payload) => store.isDark = payload"/>
         <main class="pt-20">
             <NuxtPage />
@@ -12,7 +12,7 @@ import HeaderBar from './layouts/Header-bar.vue'
 
 const store = useConfig();
 const isDark = computed(() => store.isDark);
-
+const {locale, localeProperties} = useI18n()
 
 // Initialize theme from local storage
 onMounted(() => {
@@ -27,6 +27,10 @@ watch(isDark, (newValue) => {
 useHead({
     titleTemplate: (title) => {
         return  title ? `${title} | Fatimah Developer` : 'Fatimah Developer';
+    },
+    htmlAttrs: {
+        lang: () => locale,
+        dir: () => localeProperties.value.dir
     }
 })
 

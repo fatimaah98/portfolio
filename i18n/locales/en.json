@@ -4,5 +4,16 @@
     "Projects": "Projects",
     "Contact": "Contact",
     "view_work": "View my work",
-    "get_touch": "Get in Touch"
+    "get_touch": "Get in Touch",
+    "welcome": "Hi, I'm",
+    "name": "Fatemeh Nassari",
+    "smort-define": "Hi, I'm Fatemeh 👋, a front-end developer with experience in Nuxt/Vue frameworks.",
+    "my-favorite-work": "Passionate about testing 🧪, plugin development 🧩, building interactive websites 🌐 and PWAs 🚀.",
+    "my-exprience": "I have experience working at Matin, an international travel agency ✈️.",
+    "front-skils": "Front-end skills: Vue/Nuxt ✅",
+    "back-skills": "Back-end skills: Node/Express ✅",
+    "my-goals": "My goal is to be involved in large projects with significant challenges 🎯, where I can excel in my career ✨ and create value 💎.",
+    "linkedin": "Linkedine",
+    "github": "Github",
+    "more-info": "More Information"
 }

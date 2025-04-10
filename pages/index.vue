@@ -1,36 +1,36 @@
 <template>
   	<div class="container mx-auto px-4 min-h-screen flex items-center">
-		<div class="max-w-3xl mx-auto text-center md:text-left" v-motion-slide-visible-once-bottom>
-			<h1 class="text-4xl md:text-5xl font-bold mb-6">
-				Hi, I'm <span class="text-primary">Fatemeh Nassari</span>
+		<div class="max-w-3xl mx-auto text-center md:ltr:text-left md:rtl:text-right" v-motion-slide-visible-once-bottom>
+			<h1 class="text-4xl md:text-5xl font-bold mb-6 rtl:leading-normal">
+				{{ $t('welcome') }} <span class="text-primary">{{ $t('name') }}</span>
 			</h1>
 			<div>
 				<p :class="[isDark ? 'text-gray-400' : 'text-gray-600']" class="text-lg md:text-xl mb-3">
-					Hi, I'm Fatemeh 👋, a front-end developer with experience in Nuxt/Vue frameworks.
+					{{ $t('smort-define') }}
 				</p>
 				<p :class="[isDark ? 'text-gray-400' : 'text-gray-600']" class="text-lg md:text-xl mb-3">
-					Passionate about testing 🧪, plugin development 🧩, building interactive websites 🌐 and PWAs 🚀.
+					{{ $t('my-favorite-work') }}
 				</p>
 				<p :class="[isDark ? 'text-gray-400' : 'text-gray-600']" class="text-lg md:text-xl mb-3">
-					I have experience working at Matin, an international travel agency ✈️.
+					{{ $t('my-exprience') }}
 				</p>
 				<p :class="[isDark ? 'text-gray-400' : 'text-gray-600']" class="text-lg md:text-xl mb-3">
-					Front-end skills: Vue/Nuxt ✅
+					{{ $t('front-skils') }}
 				</p>
 				<p :class="[isDark ? 'text-gray-400' : 'text-gray-600']" class="text-lg md:text-xl mb-3">
-					Back-end skills: Node/Express ✅
+					{{ $t('back-skills') }}
 				</p>
 				<p :class="[isDark ? 'text-gray-400' : 'text-gray-600']" class="text-lg md:text-xl mb-3">
-					My goal is to be involved in large projects with significant challenges 🎯, where I can excel in my career ✨ and create value 💎.
+					{{ $t('my-goals') }}
 				</p>
 			</div>
 			<div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mt-8">
-				<NuxtLink to="/projects" class="bg-primary hover:bg-secondary px-6 py-3 rounded-lg transition-colors text-white w-full sm:w-auto text-center">
+				<NuxtLinkLocale to="/projects" class="bg-primary hover:bg-secondary px-6 py-3 rounded-lg transition-colors text-white w-full sm:w-auto text-center">
 					{{ $t('view_work') }}
-				</NuxtLink>
-				<NuxtLink to="/contact" class="border border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded-lg transition-colors w-full sm:w-auto text-center">
+				</NuxtLinkLocale>
+				<NuxtLinkLocale to="/contact-us" class="border border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded-lg transition-colors w-full sm:w-auto text-center">
 					{{ $t("get_touch") }}
-				</NuxtLink>
+				</NuxtLinkLocale>
 			</div>
 			<div class="flex gap-5">
 				<nuxt-link to="https://www.linkedin.com/in/fatima-nassari/">

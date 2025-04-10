@@ -1,0 +1,16 @@
+@font-face {
+    font-family: "IranSans";
+    src: url('./fonts/IRANSansWeb\(FaNum\)_Light.woff'),
+         url('./fonts/IRANSansX-DemiBold.woff'),
+         url("./fonts/IRANSansXFaNum-Medium.woff")    
+    ;
+}
+
+.lang-fa,
+.lang-ar {
+    font-family: "IranSans";
+}
+
+.lang-en {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
