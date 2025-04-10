@@ -1,7 +1,9 @@
 export const useConfig = defineStore("configs", {
     state: () => {
+        const {locale} = useI18n()
         return {
             isDark: true,
+            enableLanguage: locale.value 
         }
     },
     actions: {
@@ -9,7 +11,6 @@ export const useConfig = defineStore("configs", {
     },
     getters: {
         getThemeMode() {
-            console.log("object");
             const savedTheme = localStorage.getItem('theme');
             this.isDark = savedTheme === 'light' ? false : true
         }

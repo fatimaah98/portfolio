@@ -4,9 +4,17 @@
         <div class="flex items-center justify-between">
           <NuxtLink to="/" class="text-2xl font-bold text-primary">Fatimah 🌙 </NuxtLink>
           <div class="hidden md:flex items-center gap-6">
-            <NuxtLink to="/" class="hover:text-primary transition-colors">Home</NuxtLink>
-            <NuxtLink to="/projects" class="hover:text-primary transition-colors">Projects</NuxtLink>
-            <NuxtLink to="/contact" class="hover:text-primary transition-colors">Contact</NuxtLink>
+            <NuxtLinkLocale to="/" class="hover:text-primary transition-colors">{{ $t("Home") }}</NuxtLinkLocale>
+            <NuxtLinkLocale to="/projects" class="hover:text-primary transition-colors">{{ $t('Projects') }}</NuxtLinkLocale>
+            <NuxtLinkLocale to="/contact" class="hover:text-primary transition-colors">{{ $t('Contact') }}</NuxtLinkLocale>
+            <button class="relative" @click="isOpenDropdownTranslation = !isOpenDropdownTranslation">
+              <LanguageIcon class="w-5" />
+              <div v-motion-pop-visible v-if="isOpenDropdownTranslation" class="absolute top-8 shadow-lg w-max rounded-md right-0 bg-white">
+                <NuxtLink @click="changeLang(lang.code)" v-for="lang in languages" class="block py-2 px-4 transition-all hover:bg-slate-200 rounded-md">
+                    {{ lang.name }}
+                </NuxtLink>
+              </div>
+            </button>
             <button @click="$emit('theme-controller', !isDark)" class="p-2 rounded-lg hover:bg-primary/10 transition-colors">
               <svg v-if="isDark" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
@@ -43,8 +51,21 @@
 </template>
 
 <script setup>
+import { LanguageIcon } from '@heroicons/vue/24/outline';
+
 defineProps(['isDark']);
-
-const isMenuOpen = ref(false)
-
+const swichPath = useSwitchLocalePath();
+const store = useConfig()
+const isMenuOpen = ref(false);
+const isOpenDropdownTranslation = ref(false);
+const languages = [
+  {name: "Persian 🇮🇷 ", code: 'fa'}, 
+  {name: "Arabic 🇦🇪 ", code: 'ar'}, 
+  {name: "English 🇬🇧 ", code: 'en'}
+]
+const changeLang = (code) => {
+  const newPath = swichPath(code);
+  navigateTo(newPath);
+  store.enableLanguage = code;
+}
 </script>

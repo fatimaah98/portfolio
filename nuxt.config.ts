@@ -5,7 +5,8 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     '@vueuse/motion/nuxt',
-    '@pinia/nuxt'
+    '@pinia/nuxt',
+    '@nuxtjs/i18n'
   ],
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
@@ -14,5 +15,15 @@ export default defineNuxtConfig({
         {property: 'og:type', content: 'website'}
       ]
     }
+  },
+  i18n: {
+    defaultLocale: 'en',
+    defaultDirection: "ltr",
+    locales: [
+      {code: 'en', name: 'English', file: 'en.json', dir: 'ltr'},
+      {code: 'fa', name: 'Persian', file: 'fa.json', dir: "rtl"},
+      {code: 'ar', name: 'Arabic', file: 'ar.json', dir: 'rtl'}
+    ],
+    strategy: 'prefix_except_default'
   }
 })

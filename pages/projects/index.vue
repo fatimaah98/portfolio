@@ -1,7 +1,7 @@
 <template>
     <div class="container mx-auto px-4 py-12">
         <h2 class="text-3xl md:text-4xl font-bold mb-8 md:mb-12 text-center" v-motion-slide-visible-once-bottom>
-            My Projects
+            {{ $t('my_projects') }}
         </h2>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             <div

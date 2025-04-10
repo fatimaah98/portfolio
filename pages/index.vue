@@ -26,10 +26,10 @@
 			</div>
 			<div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mt-8">
 				<NuxtLink to="/projects" class="bg-primary hover:bg-secondary px-6 py-3 rounded-lg transition-colors text-white w-full sm:w-auto text-center">
-				View My Work
+					{{ $t('view_work') }}
 				</NuxtLink>
 				<NuxtLink to="/contact" class="border border-primary text-primary hover:bg-primary hover:text-white px-6 py-3 rounded-lg transition-colors w-full sm:w-auto text-center">
-					Get in Touch
+					{{ $t("get_touch") }}
 				</NuxtLink>
 			</div>
 			<div class="flex gap-5">
