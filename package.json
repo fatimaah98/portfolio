@@ -1,0 +1,21 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "HOST=0.0.0.0 nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "start": "node .output/server/index.mjs"
+  },
+  "dependencies": {
+    "@heroicons/vue": "^2.1.1",
+    "@nuxtjs/tailwindcss": "^6.11.4",
+    "@pinia/nuxt": "^0.11.0",
+    "@vueuse/motion": "^2.1.0",
+    "nuxt": "^3.13.0",
+    "pinia": "^3.0.2"
+  }
+}
