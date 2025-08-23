@@ -66,11 +66,8 @@ const swichPath = useSwitchLocalePath();
 const store = useConfig()
 const isMenuOpen = ref(false);
 const isOpenDropdownTranslation = ref(false);
-const languages = [
-  {name: "Persian 🇮🇷 ", code: 'fa'}, 
-  {name: "Arabic 🇦🇪 ", code: 'ar'}, 
-  {name: "English 🇬🇧 ", code: 'en'}
-]
+const languages = store.languages;
+
 const changeLang = (code) => {
   const newPath = swichPath(code);
   navigateTo(newPath);
