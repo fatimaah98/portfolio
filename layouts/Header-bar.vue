@@ -6,11 +6,12 @@
           <div class="hidden md:flex items-center gap-6">
             <NuxtLinkLocale to="/" class="hover:text-primary transition-colors">{{ $t("Home") }}</NuxtLinkLocale>
             <NuxtLinkLocale to="/projects" class="hover:text-primary transition-colors">{{ $t('Projects') }}</NuxtLinkLocale>
+            <NuxtLinkLocale to="/blogs" class="hover:text-primary transition-colors">{{ $t('Blogs') }}</NuxtLinkLocale>
             <NuxtLinkLocale to="/contact-us" class="hover:text-primary transition-colors">{{ $t('Contact') }}</NuxtLinkLocale>
             <button class="relative" @click="isOpenDropdownTranslation = !isOpenDropdownTranslation">
               <LanguageIcon class="w-5" />
               <div v-motion-pop-visible v-if="isOpenDropdownTranslation" class="absolute top-8 shadow-lg w-max rounded-md right-0 bg-white">
-                <NuxtLink @click="changeLang(lang.code)" v-for="lang in languages" class="block py-2 px-4 transition-all hover:bg-slate-200 rounded-md">
+                <NuxtLink @click="changeLang(lang.code)" v-for="lang in languages" :key="lang.code" class="block py-2 px-4 transition-all hover:bg-slate-200 rounded-md">
                     {{ lang.name }}
                 </NuxtLink>
               </div>
@@ -48,7 +49,7 @@
           <button class="relative" @click="isOpenDropdownTranslation = !isOpenDropdownTranslation">
             <LanguageIcon class="w-5" />
             <div v-motion-pop-visible v-if="isOpenDropdownTranslation" class="absolute top-8 shadow-lg w-max rounded-md md:right-0 bg-white">
-              <NuxtLink @click="changeLang(lang.code)" v-for="lang in languages" class="block py-2 px-4 transition-all hover:bg-slate-200 rounded-md">
+              <NuxtLink @click="changeLang(lang.code)" v-for="lang in languages" :key="lang.code" class="block py-2 px-4 transition-all hover:bg-slate-200 rounded-md">
                   {{ lang.name }}
               </NuxtLink>
             </div>

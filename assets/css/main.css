@@ -8,9 +8,47 @@
 
 .lang-fa,
 .lang-ar {
-    font-family: "IranSans";
+    font-family: "IranSans", Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .lang-en {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 60px;
+}
+
+h2 {
+    font-size: 36px;
+    font-weight: 600;
+    line-height: 50px;
+}
+
+h3 {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+h4 {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+h5 {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+h6 {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+ol, ul, menu {
+    list-style: initial;
+    margin: 0;
+    padding: 0;
 }
