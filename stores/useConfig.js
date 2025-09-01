@@ -13,6 +13,7 @@ export const useConfig = defineStore("configs", {
             description: {},
             linkedin: '',
             github: '',
+            appVersion: 'v1.0.3'
         }
     },
     actions: {

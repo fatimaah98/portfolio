@@ -4,6 +4,10 @@
         <main class="pt-20">
             <NuxtPage />
         </main>
+        <footer class="p-7 border-t border-slate-500 text-center">
+          <p style="unicode-bidi: plaintext;">© 2025 Fatimaah. All rights reserved. Designed and developed with ❤️ by Fatimaah.</p>
+          <p>{{ store.appVersion }}</p>
+        </footer>
     </div>
 </template>
 

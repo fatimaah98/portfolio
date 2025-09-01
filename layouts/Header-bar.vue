@@ -35,9 +35,10 @@
         </div>
         <!-- Mobile menu -->
         <div v-show="isMenuOpen" class="md:hidden mt-4 space-y-4">
-          <NuxtLinkLocale to="/" class="block hover:text-primary transition-colors" @click="isMenuOpen = false">Home</NuxtLinkLocale>
-          <NuxtLinkLocale to="/projects" class="block hover:text-primary transition-colors" @click="isMenuOpen = false">Projects</NuxtLinkLocale>
-          <NuxtLinkLocale to="/contact-us" class="block hover:text-primary transition-colors" @click="isMenuOpen = false">Contact</NuxtLinkLocale>
+          <NuxtLinkLocale to="/" class="block hover:text-primary transition-colors" @click="isMenuOpen = false">{{ $t('Home') }}</NuxtLinkLocale>
+          <NuxtLinkLocale to="/projects" class="block hover:text-primary transition-colors" @click="isMenuOpen = false">{{ $t('Projects') }}</NuxtLinkLocale>
+          <NuxtLinkLocale to="/blogs" class="block hover:text-primary transition-colors" @click="isMenuOpen = false">{{ $t('Blogs') }}</NuxtLinkLocale>
+          <NuxtLinkLocale to="/contact-us" class="block hover:text-primary transition-colors" @click="isMenuOpen = false">{{ $t('Contact') }}</NuxtLinkLocale>
           <button @click="$emit('theme-controller', !isDark)" class="p-2 rounded-lg hover:bg-primary/10 transition-colors">
             <svg v-if="isDark" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
               <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
@@ -48,7 +49,7 @@
           </button>
           <button class="relative" @click="isOpenDropdownTranslation = !isOpenDropdownTranslation">
             <LanguageIcon class="w-5" />
-            <div v-motion-pop-visible v-if="isOpenDropdownTranslation" class="absolute top-8 shadow-lg w-max rounded-md md:right-0 bg-white">
+            <div v-motion-pop-visible v-if="isOpenDropdownTranslation" class="absolute top-8 shadow-lg w-max rounded-md md:right-0" :class="{'bg-white' : !isDark, 'bg-slate-700': isDark}">
               <NuxtLink @click="changeLang(lang.code)" v-for="lang in languages" :key="lang.code" class="block py-2 px-4 transition-all hover:bg-slate-200 rounded-md">
                   {{ lang.name }}
               </NuxtLink>

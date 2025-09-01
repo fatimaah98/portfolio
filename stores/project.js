@@ -4,6 +4,7 @@ export const useProject = defineStore("project-store", {
         return {
             projects: null,
             api: config.baseAPI,
+            project: null
         }
     },
 
@@ -13,6 +14,14 @@ export const useProject = defineStore("project-store", {
             if(status.value == "success") {
                 this.projects = data.value;
                 console.log("object: ", this.projects);
+            }
+        },
+
+        async getProjectBySlug(slug) {
+            const store = useConfig();
+            const {data, status} = await useFetch(`${store.baseAPI}/${store.enableLanguage}/projects/${slug}`);
+            if(status.value == 'success') {
+                this.project = data.value;
             }
         }
     }

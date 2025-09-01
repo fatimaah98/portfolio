@@ -1,5 +1,5 @@
 <template>
-  	<div class="container mx-auto px-4 min-h-screen flex items-center">
+  	<div class="container mx-auto px-8 md:px-4 min-h-screen flex items-center">
 		<div class="max-w-3xl mx-auto text-center md:ltr:text-left md:rtl:text-right" v-motion-slide-visible-once-bottom>
 			<div 
 			v-html="store.description[store.enableLanguage]" 
