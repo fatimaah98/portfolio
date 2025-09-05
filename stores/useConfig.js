@@ -4,7 +4,7 @@ export const useConfig = defineStore("configs", {
         return {
             isDark: true,
             enableLanguage: locale.value, 
-            baseAPI: "http://api.fatemeh-nassari.ir/api/v1",
+            baseAPI: "https://api.fatemeh-nassari.ir/api/v1",
             languages: [
                 {name: "Persian 🇮🇷 ", code: 'fa'}, 
                 {name: "Arabic 🇦🇪 ", code: 'ar'}, 
