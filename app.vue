@@ -1,19 +1,10 @@
 <template>
-    <!-- <div :class="[isDark ? 'bg-dark text-white' : 'bg-light text-dark', `lang-${locale}`]" class="min-h-screen">
-        <HeaderBar :is-dark="isDark" @themeController="(payload) => store.isDark = payload"/>
-        <main class="pt-20">
-            <NuxtPage />
-        </main>
-        <footer class="p-7 border-t border-slate-500 text-center">
-          <p style="unicode-bidi: plaintext;">© 2025 Fatimaah. All rights reserved. Designed and developed with ❤️ by Fatimaah.</p>
-          <p>{{ store.appVersion }}</p>
-        </footer>
-    </div> -->
-    <div class="min-h-screen bg-background text-foreground">
-        <header-bar />
-        <main class="pt-16">
-            <nuxt-page />
-        </main>
+    <div :class="`lang-${locale}`">
+          <HeaderBar />
+          <main>
+               <NuxtPage />
+          </main>
+          <PartialsFooter />
     </div>
 </template>
 
