@@ -3,22 +3,24 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-16">
                 <div class="cursor-pointer">
-                    <nuxt-link to="/" class="text-primary">Alex Chen</nuxt-link>
+                    <h2 class="text-primary">Alex Chen</h2>
                 </div>
                 <div class="hidden md:flex space-x-8">
-                    <NuxtLinkLocale v-for="item in store.tabs" :key="item.name"  :to="item.route" @click="changePage(item.name)"
-                    class="px-3 py-2 transition-colors text-muted-foreground hover:text-foreground"
-                    :class="{'text-primary border-primary border-b-2': item.name.toLowerCase() == store.currentTab.toLowerCase()}">
-                        {{ $t(item.name) }}
-                    </NuxtLinkLocale>
-                    <button class="relative" @click="isOpenDropdownTranslation = !isOpenDropdownTranslation">
-                        <LanguageIcon class="w-5" />
-                        <div v-motion-pop-visible v-if="isOpenDropdownTranslation" class="absolute top-8 shadow-lg w-max rounded-md right-0 bg-white">
-                            <NuxtLink @click="changeLang(lang.code)" v-for="lang in languages" :key="lang.code" class="block py-2 px-4 transition-all hover:bg-slate-200 rounded-md">
-                                {{ lang.name }}
-                            </NuxtLink>
-                        </div>
-                    </button>
+                <button class="px-3 py-2 transition-colors text-primary border-b-2 border-primary">
+                    {{ $t('Home') }}
+                </button>
+                <button class="px-3 py-2 transition-colors text-muted-foreground hover:text-foreground">
+                    {{ $t('Projects') }}
+                </button>
+                <button class="px-3 py-2 transition-colors text-muted-foreground hover:text-foreground">
+                    {{ $t('Blogs') }}
+                </button>
+                <button class="px-3 py-2 transition-colors text-muted-foreground hover:text-foreground">
+                    {{ $t('Services') }}
+                </button>
+                <button class="px-3 py-2 transition-colors text-muted-foreground hover:text-foreground">
+                    {{ $t('Contact') }}
+                </button>
                 </div>
                 <div class="md:hidden">
                     <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50 size-9 rounded-md">
@@ -44,25 +46,5 @@
         </div>
     </nav>
 </template>
-
 <script setup>
-import { LanguageIcon } from '@heroicons/vue/24/outline';
-
-defineProps(['isDark']);
-const swichPath = useSwitchLocalePath();
-const store = useConfig()
-const route = useRoute();
-const isMenuOpen = ref(false);
-const isOpenDropdownTranslation = ref(false);
-const languages = store.languages;
-
-const changeLang = (code) => {
-  const newPath = swichPath(code);
-  navigateTo(newPath);
-  store.enableLanguage = code;
-  isMenuOpen.value = false;
-}
-
-const changePage = (name) => store.currentTab = name;
-
 </script>

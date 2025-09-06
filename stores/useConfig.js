@@ -13,7 +13,15 @@ export const useConfig = defineStore("configs", {
             description: {},
             linkedin: '',
             github: '',
-            appVersion: 'v1.0.3'
+            appVersion: 'v1.0.3',
+            tabs: [
+                {name: 'Index', route: '/'},
+                {name : 'Projects', route: '/projects'},
+                {name: 'Blogs', route: '/blogs'},
+                {name: 'Services', route: '/'},
+                {name: 'Contact', route: '/contact-us'}
+            ],
+            currentTab: useRoute().name?.toString().split("__")[0]
         }
     },
     actions: {

@@ -1,9 +1,11 @@
 {
     "my_projects": "My Projects",
     "Home": "Home",
+    "Index": "Home",
     "Projects": "Projects",
     "Contact": "Contact",
     "Blogs": "My Blogs",
+    "Services": "My services",
     "view_work": "View my work",
     "get_touch": "Get in Touch",
     "welcome": "Hi, I'm",
