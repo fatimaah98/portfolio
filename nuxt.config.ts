@@ -7,7 +7,8 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@vueuse/motion/nuxt',
     '@pinia/nuxt',
-    '@nuxtjs/i18n'
+    '@nuxtjs/i18n',
+    '@nuxt/ui'
   ],
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },

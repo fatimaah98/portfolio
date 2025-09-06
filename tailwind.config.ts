@@ -7,7 +7,7 @@ export default {
     extend: {
       colors: {
         primary: '#030213',
-        secondary: '#4f46e5',
+        secondary: 'oklch(0.95 0.0058 264.53)',
         dark: '#111827',
         'dark-lighter': '#1f2937',
         light: '#ffffff',
@@ -15,7 +15,11 @@ export default {
         'muted-foreground': '#717182',
         foreground: 'oklch(0.145 0 0)',
         accent: '#e9ebef',
-        destructive: '#d4183d'
+        destructive: '#d4183d',
+        'primary-foreground': 'oklch(1 0 0)',
+        'secondary-foreground': '#030213',
+        'accent-foreground': '#030213',
+        'destructive-foreground': '#ffffff',
       }
     }
   },
